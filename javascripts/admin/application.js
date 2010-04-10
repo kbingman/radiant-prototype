@@ -95,14 +95,14 @@ teButtons.push(new EditorButton('h3',         'h3.png',            'h3',  '\n', 
 teButtons.push(new EditorButton('block',      'blockquote.png',    'bq',  '\n', 'q', 'Blockquote'));
 teButtons.push(new EditorButtonSeparator(''));
 teButtons.push("<button class=\"link\" onclick=\"alert('not yet ported from textile_editor');return false; new LinkPopup(this);return false;\" accesskey=\"a\" class=\"standard\"><img src=\""+relative_url_root+"/images/admin/toolbar/link.png\" title=\"Link\" alt=\"Link\" /></button>");
-teButtons.push("<button class=\"img\" onclick=\"alert('not yet ported from textile_editor');return false; new ImagePopup(this);return false;\" accesskey=\"m\" class=\"standard\"><img src=\""+relative_url_root+"/images/admin/toolbar/image.png\" title=\"Image\" alt=\"Image\" /></button>");
 
 var meButtons = MarkdownEditor.prototype.buttons;
 meButtons.push(new EditorButton('strong',     'bold.png',          '**',   '**',  'b', 'Bold','s'));
 meButtons.push(new EditorButton('emphasis',   'italic.png',        '_',   '_',  'i', 'Italicize','s'));
 
-var reButtons = RadiusEditor.prototype.buttons;
-reButtons.push(new EditorButtonSeparator(''));
+var reButtons = RadiusEditor.prototype.buttons;    
+reButtons.push(new EditorButtonSeparator('')); 
+reButtons.push("<button class=\"img\" onclick=\"loadFilesTree(0); return false;\" accesskey=\"m\" class=\"standard\"><img src=\""+relative_url_root+"/images/admin/toolbar/image.png\" title=\"Image\" alt=\"Image\" /></button>");
 reButtons.push("<button class=\"snippet\" onclick=\"loadSnippetReference(0); return false;\" accesskey=\"s\" class=\"standard\"><img src=\""+relative_url_root+"/images/admin/toolbar/snippet.png\" title=\"Snippets\" alt=\"Snippets\" /></button>");
 reButtons.push("<button class=\"tag\" onclick=\"loadTagReference(0); return false;\" accesskey=\"t\" class=\"standard\"><img src=\""+relative_url_root+"/images/admin/toolbar/tag.png\" title=\"Tags\" alt=\"Tags\" /></button>");
 

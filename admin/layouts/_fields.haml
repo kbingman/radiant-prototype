@@ -2,8 +2,8 @@
   :javascript
     var lastPageType = "";
     var tagReferenceWindows = {};
-    function loadTagReference(part) {
-      var pageType = 'Page';
+    function loadTagReference(part) { 
+      var pageType = 'Layout';
       var window = tagReferenceWindows[pageType];
       if (!tagReferenceWindows[pageType])
         tagReferenceWindows[pageType] = new Popup.AjaxWindow("/admin/docs/tags/" + encodeURIComponent(pageType));

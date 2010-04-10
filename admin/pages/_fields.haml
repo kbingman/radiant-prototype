@@ -84,7 +84,7 @@
     var lastPageType = "";
     var tagReferenceWindows = {};
     function loadTagReference(part) {
-      var pageType = $F('page_class_name');
+      var pageType = 'Page';
       var window = tagReferenceWindows[pageType];
       if (!tagReferenceWindows[pageType])
         tagReferenceWindows[pageType] = new Popup.AjaxWindow("/admin/docs/tags/" + encodeURIComponent(pageType));
@@ -127,6 +127,18 @@
       }
       return false;
     }
+    
+     var filesWindow = undefined;
+      function loadFilesTree(part) {   
+        // alert('this will show the files window');
+        if (filesWindow) {
+          filesWindow.toggle();
+        } else {
+          filesWindow = new Popup.AjaxWindow("/admin/docs/images/index");
+          filesWindow.show();
+        }
+        return false;
+      }
 
 %p.title
   %label{:for=>"page_title"} Page Title
@@ -199,7 +211,7 @@
       %option{:selected=>"selected", :value=>""} &lt;inherit&gt;
       %option{:value=>"1"} Two Column
       %option{:value=>"2"} Three Column
-      %option{:value=>"3"} XML Feed
+      %option{:value=>"3"} XML Feed      
   %p
     %label{:for=>"page_status_id"} Status
     %select#page_status_id{:name=>"page[status_id]"}
