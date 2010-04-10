@@ -80,7 +80,9 @@ Event.addBehavior({
   
   'input.date': DateInputBehavior(),
   
-  'select#page_status_id':  PageStatusBehavior()
+  'select#page_status_id':  PageStatusBehavior(),       
+  
+  '.add_image a.action': ImageChooserBehavior()
 });
 
 // Toolbars
