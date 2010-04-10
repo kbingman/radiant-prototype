@@ -1,12 +1,16 @@
 var ImageChooserBehavior = Behavior.create({       
   
-  onclick: function(event) {     
-    var imageUrl = event.target.readAttribute('href');
-    this.insertAtCaret(imageUrl);
-    return false;
+  onclick: function(event) { 
+    if(event.target.hasClassName('action')){
+      var imageUrl = event.target.readAttribute('href');  
+      var row = event.findElement('tr');   
+      var imageTitle = row.select('td.name a')[0].innerHTML;
+      this.insertAtCaret(imageUrl, imageTitle);
+      return false;
+    }    
   },   
   
-  insertAtCaret: function(imageUrl) {   
+  insertAtCaret: function(imageUrl, imageTitle) {   
     var pageParts = $$('.page'), activeTextArea = '';        
     pageParts.each(function(part){
       if (part.visible()) {
@@ -25,13 +29,10 @@ var ImageChooserBehavior = Behavior.create({
        value = '!' + imageUrl + '!';     
        break; 
      case "Markdown" :
-       value = '![alt text]('  + imageUrl + ')'; 
-       break;    
-     case "SmartyPants" :
-       value = '<img src="' + imageUrl + '" alt="image" />';  
+       value = '![' + imageTitle + ']('  + imageUrl + ')'; 
        break;    
      default : 
-       value = '<img src="' + imageUrl + '" alt="image" />';   
+       value = '<img src="' + imageUrl + '" alt="' + imageTitle + '" />'; 
        break;
     }         
     

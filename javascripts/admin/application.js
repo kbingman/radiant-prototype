@@ -82,7 +82,7 @@ Event.addBehavior({
   
   'select#page_status_id':  PageStatusBehavior(),       
   
-  '.add_image a.action': ImageChooserBehavior()
+  'tr.image': ImageChooserBehavior()
 });
 
 // Toolbars
