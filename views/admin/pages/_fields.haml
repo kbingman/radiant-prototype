@@ -128,17 +128,17 @@
       return false;
     }
     
-     var filesWindow = undefined;
-      function loadFilesTree(part) {   
-        // alert('this will show the files window');
-        if (filesWindow) {
-          filesWindow.toggle();
-        } else {
-          filesWindow = new Popup.AjaxWindow("/admin/docs/images/index");
-          filesWindow.show();
-        }
-        return false;
+    var filesWindow = undefined;
+    function loadFilesTree(part) {   
+      // alert('this will show the files window');
+      if (filesWindow) {
+        filesWindow.toggle();
+      } else {
+        filesWindow = new Popup.AjaxWindow("/admin/docs/folders/index");
+        filesWindow.show();
       }
+      return false;
+    }
 
 %p.title
   %label{:for=>"page_title"} Page Title

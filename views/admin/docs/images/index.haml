@@ -1,0 +1,39 @@
+#images_list_popup.popup   
+  
+  %h3.title
+    Available Images
+  %p
+    %label.inline{ :for => "search_images" }
+      Filter Images
+    %input#search_images{ :name => "search_images", :type => "search", :value => "" }
+  .images
+    %table#images.index
+      %thead
+        %tr
+          %th.name Image
+          %th.actions Modify
+      %tbody
+        %tr.image#image_1
+          %td.name
+            %img{:title=>"", :src=>"/images/admin/image.png", :alt=>"image_icon"}/
+            %a{:href=>"/admin/images/edit", :title=>"/images/logo.png"} logo.png
+          %td.actions
+            = link_to image('plus.png') + " Add Image", "/images/admin/image.png", :class=>"action"
+        %tr.image#image_2
+          %td.name
+            %img{:title=>"", :src=>"/images/admin/image.png", :alt=>"image_icon"}/
+            %a{:href=>"/admin/images/edit", :title=>"/images/john.jpg"} john.jpg
+          %td.actions    
+            = link_to image('plus.png') + " Add Image", "/images/admin/image.png", :class=>"action"          
+        %tr.image#image_3
+          %td.name
+            %img{:title=>"", :src=>"/images/admin/image.png", :alt=>"image_icon"}/
+            %a{:href=>"/admin/images/edit", :title=>"/images/sean.jpg"} sean.jpg
+          %td.actions
+            = link_to image('plus.png') + " Add Image", "/images/admin/image.png", :class=>"action"             
+            
+  %p.close_link
+    %a{ :href => "javascript: Element.closePopup('images_list_popup')" } 
+      Close Images    
+  
+  

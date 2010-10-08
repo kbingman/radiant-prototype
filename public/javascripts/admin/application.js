@@ -37,7 +37,9 @@ Event.addBehavior({
   
   'a.popup': Popup.TriggerBehavior(),
   
-  'table#pages': SiteMapBehavior(),
+  'table#pages': SiteMapBehavior(), 
+  
+  'table#images': SiteMapBehavior(), 
   
   'input#page_title': function() {
     var title = this;

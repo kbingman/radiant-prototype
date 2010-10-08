@@ -35,7 +35,7 @@ var ImageChooserBehavior = Behavior.create({
        value = '<img src="' + imageUrl + '" alt="' + imageTitle + '" />'; 
        break;
     }         
-    
+    console.log ('Value' + value)
     
     // Internet Explore  support
     if (document.selection) {
